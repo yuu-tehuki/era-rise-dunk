@@ -370,10 +370,70 @@
       opacity: 0.7;
     }
 
-    .rank-icon {
-      font-size: 1.1rem;
-      line-height: 1;
+    /* ── RANK BADGE (shield) ── */
+    .rank-badge {
+      width: 34px;
+      height: 40px;
+      clip-path: polygon(50% 0%, 100% 16%, 100% 72%, 50% 100%, 0% 72%, 0% 16%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease, filter 0.2s ease;
+      flex-shrink: 0;
     }
+
+    .rank-badge-face {
+      width: 26px;
+      height: 31px;
+      clip-path: polygon(50% 0%, 100% 16%, 100% 72%, 50% 100%, 0% 72%, 0% 16%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.95);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+      letter-spacing: 0;
+      position: relative;
+    }
+
+    /* highlight streak at top of each shield */
+    .rank-badge-face::after {
+      content: '';
+      position: absolute;
+      top: 22%;
+      left: 18%;
+      right: 18%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.35);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    @media (hover: hover) {
+      .rank-badge:hover {
+        transform: scale(1.2);
+        filter: drop-shadow(0 3px 8px rgba(255, 255, 255, 0.18));
+      }
+    }
+
+    /* per-rank outer border color */
+    .rank-rookie  { background: #4c1d95; }
+    .rank-bronze  { background: #78350f; }
+    .rank-silver  { background: #374151; }
+    .rank-gold    { background: #713f12; }
+    .rank-platinum { background: #0c4a6e; }
+    .rank-diamond { background: #083344; }
+    .rank-legend  { background: #7f1d1d; }
+
+    /* per-rank inner face gradient */
+    .rank-rookie  .rank-badge-face { background: linear-gradient(150deg, #a78bfa 0%, #6d28d9 100%); }
+    .rank-bronze  .rank-badge-face { background: linear-gradient(150deg, #fbbf24 0%, #92400e 100%); }
+    .rank-silver  .rank-badge-face { background: linear-gradient(150deg, #e5e7eb 0%, #6b7280 100%); color: rgba(0,0,0,0.75); text-shadow: none; }
+    .rank-gold    .rank-badge-face { background: linear-gradient(150deg, #fde68a 0%, #b45309 100%); color: rgba(0,0,0,0.85); text-shadow: none; }
+    .rank-platinum .rank-badge-face { background: linear-gradient(150deg, #7dd3fc 0%, #0369a1 100%); }
+    .rank-diamond .rank-badge-face { background: linear-gradient(150deg, #a5f3fc 0%, #0e7490 100%); color: rgba(0,0,0,0.75); text-shadow: none; }
+    .rank-legend  .rank-badge-face { background: linear-gradient(150deg, #fca5a5 0%, #b91c1c 100%); }
 
     .rank-name {
       font-family: 'Bebas Neue', sans-serif;
@@ -383,7 +443,8 @@
       text-align: center;
     }
 
-    .rank-item.active .rank-name { color: var(--gold-light); }
+    .rank-item.active .rank-name  { color: var(--gold-light); }
+    .rank-item.active .rank-badge { filter: drop-shadow(0 2px 10px rgba(251, 191, 36, 0.55)); transform: scale(1.14); }
 
     .game-features {
       display: grid;
@@ -837,37 +898,37 @@
         <div class="ranks-track">
           <div class="rank-item">
             <div class="rank-bar" style="height: 30px; --bar-color: #8b5cf6;"></div>
-            <span class="rank-icon">🟣</span>
+            <div class="rank-badge rank-rookie"><div class="rank-badge-face">R</div></div>
             <span class="rank-name">ROOKIE</span>
           </div>
           <div class="rank-item">
             <div class="rank-bar" style="height: 46px; --bar-color: #cd7f32;"></div>
-            <span class="rank-icon">🟤</span>
+            <div class="rank-badge rank-bronze"><div class="rank-badge-face">B</div></div>
             <span class="rank-name">BRONZE</span>
           </div>
           <div class="rank-item">
             <div class="rank-bar" style="height: 62px; --bar-color: #adb5bd;"></div>
-            <span class="rank-icon">⚪</span>
+            <div class="rank-badge rank-silver"><div class="rank-badge-face">S</div></div>
             <span class="rank-name">SILVER</span>
           </div>
           <div class="rank-item active">
             <div class="rank-bar" style="height: 80px; --bar-color: #d4a017;"></div>
-            <span class="rank-icon">🟡</span>
+            <div class="rank-badge rank-gold"><div class="rank-badge-face">★</div></div>
             <span class="rank-name">GOLD</span>
           </div>
           <div class="rank-item">
             <div class="rank-bar" style="height: 100px; --bar-color: #00d4ff;"></div>
-            <span class="rank-icon">🔵</span>
+            <div class="rank-badge rank-platinum"><div class="rank-badge-face">P</div></div>
             <span class="rank-name">PLATINUM</span>
           </div>
           <div class="rank-item">
             <div class="rank-bar" style="height: 120px; --bar-color: #b9f2ff;"></div>
-            <span class="rank-icon">💎</span>
+            <div class="rank-badge rank-diamond"><div class="rank-badge-face">◆</div></div>
             <span class="rank-name">DIAMOND</span>
           </div>
           <div class="rank-item">
             <div class="rank-bar" style="height: 144px; --bar-color: #ff4d4f;"></div>
-            <span class="rank-icon">🔴</span>
+            <div class="rank-badge rank-legend"><div class="rank-badge-face">★</div></div>
             <span class="rank-name">LEGEND</span>
           </div>
         </div>
