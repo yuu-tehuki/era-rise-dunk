@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スポンサー募集 | Era Rise Dunk</title>
+  <meta name="description" content="Era Rise Dunk スポンサー募集。イベント・スタンダード・プレミアム・オフィシャルの4プラン。公式サイトロゴ掲載・SNS告知・選手Tシャツ掲載など多彩な露出機会をご提供します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ── VARIABLES ── */
+    :root {
+      --black:       #0a0a0a;
+      --black-mid:   #111111;
+      --black-light: #1a1a1a;
+      --gold:        #d4a017;
+      --gold-light:  #f0c040;
+      --gold-dark:   #a07810;
+      --red:         #c0152a;
+      --red-light:   #e01e35;
+      --white:       #f5f5f5;
+      --gray:        #888888;
+      --gray-light:  #cccccc;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html  { scroll-behavior: smooth; }
+    body  {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Noto Sans JP', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ── TYPE HELPERS ── */
+    .gold-text { color: var(--gold-light); }
+    .red-text  { color: var(--red-light); }
+
+    .section-label {
+      display: inline-block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      border: 1px solid var(--gold-dark);
+      padding: 4px 14px;
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 5vw, 2.4rem);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .section-sub {
+      color: var(--gray-light);
+      font-size: 0.92rem;
+      margin-bottom: 40px;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 900;
+      font-size: 1rem;
+      padding: 16px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      letter-spacing: 0.05em;
+      transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+    }
+
+    .btn:active { transform: scale(0.97); }
+
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+      color: var(--black);
+      box-shadow: 0 4px 20px rgba(212,160,23,0.35);
+    }
+
+    @media (hover: hover) {
+      .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(212,160,23,0.55); }
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold-light);
+      border: 1px solid rgba(212,160,23,0.4);
+      box-shadow: none;
+    }
+
+    @media (hover: hover) {
+      .btn-outline:hover { background: rgba(212,160,23,0.07); transform: translateY(-1px); }
+    }
+
+    /* ── ANIMATIONS ── */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-reveal].is-visible { opacity: 1; transform: none; }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.93);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(212,160,23,0.2);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .logo-wrap { display: flex; align-items: baseline; gap: 8px; text-decoration: none; }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+    }
+
+    .logo span { color: var(--red-light); }
+
+    .logo-tag {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--gray);
+      border: 1px solid rgba(212,160,23,0.2);
+      padding: 2px 7px;
+      border-radius: 2px;
+    }
+
+    .header-cta {
+      font-size: 0.78rem;
+      padding: 10px 18px;
+      max-width: none;
+      width: auto;
+      flex-shrink: 0;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 110px 20px 70px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 75% 55% at 50% 40%, rgba(212,160,23,0.10) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 40% at 15% 75%, rgba(192,21,42,0.13) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 85% 20%, rgba(192,21,42,0.08) 0%, transparent 55%),
+        var(--black);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(212,160,23,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212,160,23,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-ring {
+      position: absolute;
+      border-radius: 50%;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-ring:nth-child(1) { width: 260px; height: 260px; border: 1px solid rgba(212,160,23,0.08); }
+    .hero-ring:nth-child(2) { width: 500px; height: 500px; border: 1px solid rgba(192,21,42,0.05); }
+    .hero-ring:nth-child(3) { width: 760px; height: 760px; border: 1px solid rgba(212,160,23,0.04); }
+
+    .hero-content { position: relative; z-index: 2; max-width: 660px; }
+
+    .hero-eyebrow {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.28em;
+      font-size: 0.85rem;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      width: 36px;
+      height: 1px;
+      background: var(--gold-dark);
+      flex-shrink: 0;
+    }
+
+    .hero-title {
+      font-size: clamp(1.65rem, 5.5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      margin-bottom: 22px;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--gold-light);
+    }
+
+    .hero-title .hero-brand {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.4rem, 9vw, 5rem);
+      color: transparent;
+      -webkit-text-stroke: 2px var(--gold-light);
+      letter-spacing: 0.06em;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .hero-desc {
+      color: var(--gray-light);
+      font-size: 0.93rem;
+      line-height: 1.9;
+      margin-bottom: 36px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-note {
+      font-size: 0.74rem;
+      color: var(--gray);
+      margin-top: 6px;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 28px; left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: var(--gray);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      animation: sbounce 2s infinite;
+    }
+
+    .scroll-hint::after {
+      content: '';
+      width: 1px; height: 34px;
+      background: linear-gradient(to bottom, var(--gold-dark), transparent);
+    }
+
+    @keyframes sbounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(7px); }
+    }
+
+    /* ── SPONSOR CONTENTS ── */
+    #contents {
+      padding: 80px 0;
+      background: var(--black-mid);
+      border-top: 1px solid rgba(212,160,23,0.12);
+    }
+
+    .contents-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .content-card {
+      background: var(--black-light);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 22px 18px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .content-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+    }
+
+    .content-icon {
+      font-size: 1.9rem;
+      line-height: 1;
+    }
+
+    .content-card h3 {
+      font-size: 0.9rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1.4;
+    }
+
+    .content-card p {
+      font-size: 0.76rem;
+      color: var(--gray-light);
+      line-height: 1.65;
+    }
+
+    /* ── PLANS ── */
+    #plans {
+      padding: 80px 0;
+      background: var(--black);
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .plan-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      position: relative;
+    }
+
+    .plan-card.is-top {
+      border-color: rgba(212,160,23,0.45);
+      box-shadow: 0 0 28px rgba(212,160,23,0.1);
+    }
+
+    .plan-recommended {
+      position: absolute;
+      top: 14px; right: 14px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--gold);
+      color: var(--black);
+      z-index: 1;
+    }
+
+    /* plan header colour per tier */
+    .plan-event    .plan-header { background: rgba(76, 29, 149, 0.22); }
+    .plan-standard .plan-header { background: rgba(120,53,15, 0.22); }
+    .plan-premium  .plan-header { background: rgba(55,65,81, 0.25); }
+    .plan-official .plan-header { background: rgba(113,63,18, 0.28); }
+
+    .plan-header {
+      padding: 22px 22px 18px;
+    }
+
+    /* ── SHIELD BADGE (shared with index.html) ── */
+    .shield-wrap {
+      width: 44px; height: 52px;
+      clip-path: polygon(50% 0%, 100% 16%, 100% 72%, 50% 100%, 0% 72%, 0% 16%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .shield-face {
+      width: 34px; height: 40px;
+      clip-path: polygon(50% 0%, 100% 16%, 100% 72%, 50% 100%, 0% 72%, 0% 16%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.95);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+      letter-spacing: 0;
+    }
+
+    .plan-event    .shield-wrap { background: #4c1d95; }
+    .plan-event    .shield-face { background: linear-gradient(150deg, #a78bfa, #6d28d9); }
+
+    .plan-standard .shield-wrap { background: #78350f; }
+    .plan-standard .shield-face { background: linear-gradient(150deg, #fbbf24, #92400e); }
+
+    .plan-premium  .shield-wrap { background: #374151; }
+    .plan-premium  .shield-face { background: linear-gradient(150deg, #e5e7eb, #6b7280); color: rgba(0,0,0,0.8); text-shadow: none; }
+
+    .plan-official .shield-wrap { background: #713f12; }
+    .plan-official .shield-face { background: linear-gradient(150deg, #fde68a, #b45309); color: rgba(0,0,0,0.85); text-shadow: none; }
+
+    .plan-tier-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .plan-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.06em;
+      line-height: 1;
+    }
+
+    .plan-name-sub {
+      font-size: 0.7rem;
+      color: var(--gray-light);
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+
+    .plan-event    .plan-name { color: #a78bfa; }
+    .plan-standard .plan-name { color: #fbbf24; }
+    .plan-premium  .plan-name { color: #e5e7eb; }
+    .plan-official .plan-name { color: var(--gold-light); }
+
+    .plan-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .plan-price-label {
+      font-size: 0.78rem;
+      color: var(--gray-light);
+    }
+
+    .plan-price-value {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+
+    .plan-price-note {
+      font-size: 0.7rem;
+      color: var(--gray);
+      margin-top: 3px;
+    }
+
+    .plan-body {
+      background: var(--black-light);
+      padding: 20px 22px 22px;
+    }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 20px;
+    }
+
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 0.83rem;
+      color: var(--gray-light);
+      line-height: 1.5;
+    }
+
+    .plan-features li .chk {
+      flex-shrink: 0;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.62rem;
+      font-weight: 900;
+      margin-top: 1px;
+    }
+
+    .chk-on  { background: rgba(212,160,23,0.15); color: var(--gold-light); border: 1px solid rgba(212,160,23,0.3); }
+    .chk-off { background: rgba(255,255,255,0.04); color: var(--gray); border: 1px solid rgba(255,255,255,0.08); }
+
+    .plan-features li.active { color: var(--white); font-weight: 700; }
+    .plan-features li.dim    { opacity: 0.35; }
+
+    .plan-cta-btn {
+      display: block;
+      text-align: center;
+      padding: 13px;
+      border-radius: 6px;
+      font-weight: 900;
+      font-size: 0.9rem;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .plan-cta-btn:active { transform: scale(0.97); }
+
+    @media (hover: hover) { .plan-cta-btn:hover { opacity: 0.84; } }
+
+    .plan-event    .plan-cta-btn { background: linear-gradient(135deg, #6d28d9, #a78bfa); color: var(--white); }
+    .plan-standard .plan-cta-btn { background: linear-gradient(135deg, #92400e, #d97706); color: var(--white); }
+    .plan-premium  .plan-cta-btn { background: linear-gradient(135deg, #4b5563, #9ca3af); color: var(--white); }
+    .plan-official .plan-cta-btn { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--black); }
+
+    /* ── CONTACT ── */
+    #contact {
+      padding: 80px 0;
+      background: var(--black-mid);
+      border-top: 1px solid rgba(212,160,23,0.12);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-row label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gray-light);
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .required-badge {
+      font-size: 0.62rem;
+      background: var(--red);
+      color: var(--white);
+      padding: 2px 7px;
+      border-radius: 3px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+
+    .optional-badge {
+      font-size: 0.62rem;
+      background: rgba(255,255,255,0.08);
+      color: var(--gray);
+      padding: 2px 7px;
+      border-radius: 3px;
+      letter-spacing: 0.05em;
+    }
+
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+      background: var(--black-light);
+      border: 1px solid rgba(212,160,23,0.18);
+      border-radius: 6px;
+      padding: 13px 15px;
+      color: var(--white);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-size: 0.9rem;
+      width: 100%;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-row input::placeholder,
+    .form-row textarea::placeholder {
+      color: rgba(136,136,136,0.6);
+      font-size: 0.85rem;
+    }
+
+    .form-row input:focus,
+    .form-row select:focus,
+    .form-row textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212,160,23,0.1);
+    }
+
+    .form-row select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23d4a017' d='M5 6L0 0h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 15px center;
+      padding-right: 38px;
+      cursor: pointer;
+    }
+
+    .form-row select option {
+      background: #1a1a1a;
+      color: var(--white);
+    }
+
+    .form-row textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-row-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-submit {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+      color: var(--black);
+      font-weight: 900;
+      font-size: 1.05rem;
+      padding: 17px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      letter-spacing: 0.06em;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 20px rgba(212,160,23,0.3);
+      margin-top: 4px;
+    }
+
+    .form-submit:active { transform: scale(0.97); }
+
+    @media (hover: hover) {
+      .form-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(212,160,23,0.5);
+      }
+    }
+
+    .form-note {
+      font-size: 0.74rem;
+      color: var(--gray);
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 32px 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span { color: var(--red-light); }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      font-size: 0.74rem;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    @media (hover: hover) { .footer-links a:hover { color: var(--gold-light); } }
+
+    .footer-copy { font-size: 0.72rem; color: var(--gray); }
+
+    /* ── RESPONSIVE ── */
+    @media (min-width: 540px) {
+      .contents-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (min-width: 640px) {
+      .plans-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 768px) {
+      .hero-cta-group { flex-direction: row; justify-content: center; align-items: center; }
+      .btn { width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════ HEADER ════ -->
+  <header>
+    <a href="index.html" class="logo-wrap">
+      <span class="logo">Era <span>Rise</span> Dunk</span>
+      <span class="logo-tag">SPONSOR</span>
+    </a>
+    <a href="#contact" class="btn btn-gold header-cta">お問い合わせ</a>
+  </header>
+
+  <!-- ════ HERO ════ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">SPONSOR RECRUITMENT</p>
+
+      <h1 class="hero-title">
+        <span class="hero-brand">ERA RISE DUNK</span>
+        大会価値を共に高めていただける<br>
+        <em>スポンサー企業様を募集</em>しています
+      </h1>
+
+      <p class="hero-desc">
+        Era Rise Dunk は、全国の社会人バスケットボールプレイヤーが集う<br>
+        本格ランク制大会です。貴社のブランドを<br>
+        熱量の高いスポーツ愛好家層へ届けるパートナーシップをご提案します。
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#contact" class="btn btn-gold">お問い合わせはこちら</a>
+        <a href="#plans" class="btn btn-outline">プランを確認する</a>
+      </div>
+      <p class="hero-note">まずはお気軽にご相談ください・費用は要相談</p>
+    </div>
+
+    <div class="scroll-hint">SCROLL</div>
+  </section>
+
+  <!-- ════ SPONSOR CONTENTS ════ -->
+  <section id="contents">
+    <div class="container">
+      <div data-reveal>
+        <span class="section-label">WHAT WE OFFER</span>
+        <h2 class="section-title">協賛<span class="gold-text">内容</span></h2>
+        <p class="section-sub">プランに応じて、以下の露出機会をご提供します。</p>
+      </div>
+
+      <div class="contents-grid">
+
+        <div class="content-card" data-reveal>
+          <span class="content-icon">🏷️</span>
+          <h3>公式サイトに<br>ロゴ掲載</h3>
+          <p>Era Rise Dunk 公式サイトのスポンサーページに貴社ロゴを掲載。大会参加者・閲覧者への継続的な露出を実現します。</p>
+        </div>
+
+        <div class="content-card" data-reveal>
+          <span class="content-icon">📱</span>
+          <h3>SNS 告知・<br>紹介投稿</h3>
+          <p>Instagram・X（旧 Twitter）の公式アカウントから協賛のお知らせを投稿。フォロワーへのダイレクトリーチが可能です。</p>
+        </div>
+
+        <div class="content-card" data-reveal>
+          <span class="content-icon">🏟️</span>
+          <h3>大会当日の<br>案内・紹介</h3>
+          <p>開会式・表彰式での場内アナウンスや横断幕掲出により、参加選手・観戦者全員への認知を高めます。</p>
+        </div>
+
+        <div class="content-card" data-reveal>
+          <span class="content-icon">📖</span>
+          <h3>公式ガイドブックに<br>ロゴ掲載</h3>
+          <p>大会当日に配布される公式ガイドブックにロゴを掲載。選手・観戦者の手元に残るメディアとして機能します。</p>
+        </div>
+
+        <div class="content-card" data-reveal>
+          <span class="content-icon">🎬</span>
+          <h3>動画<br>プロモーション</h3>
+          <p>大会ハイライト動画・選手紹介動画などへの協賛クレジット掲載。SNS での動画拡散によるリーチ拡大が見込めます。</p>
+        </div>
+
+        <div class="content-card" data-reveal>
+          <span class="content-icon">👕</span>
+          <h3>各選手 T シャツに<br>ロゴ掲載</h3>
+          <p>全参加選手のユニフォーム T シャツに貴社ロゴを印刷。大会当日だけでなく、日常での着用による継続的な露出効果があります。</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ PARTNER PLANS ════ -->
+  <section id="plans">
+    <div class="container">
+      <div data-reveal>
+        <span class="section-label">PARTNER PLANS</span>
+        <h2 class="section-title">パートナー<span class="gold-text">プラン</span></h2>
+        <p class="section-sub">目的・予算に合わせた4つのパートナーシップをご用意しています。</p>
+      </div>
+
+      <div class="plans-grid">
+
+        <!-- EVENT PARTNER -->
+        <div class="plan-card plan-event" data-reveal>
+          <div class="plan-header">
+            <div class="plan-tier-row">
+              <div class="shield-wrap"><div class="shield-face">E</div></div>
+              <div>
+                <div class="plan-name">EVENT PARTNER</div>
+                <div class="plan-name-sub">イベントパートナー</div>
+              </div>
+            </div>
+            <div class="plan-price-row">
+              <span class="plan-price-label">費用</span>
+              <span class="plan-price-value">要相談</span>
+            </div>
+            <p class="plan-price-note">大会単位でのスポット協賛も可</p>
+          </div>
+          <div class="plan-body">
+            <ul class="plan-features">
+              <li class="active"><span class="chk chk-on">✓</span>公式サイトにロゴ掲載</li>
+              <li class="active"><span class="chk chk-on">✓</span>SNS 告知・紹介（1回）</li>
+              <li class="active"><span class="chk chk-on">✓</span>大会当日の場内アナウンス</li>
+              <li class="dim"><span class="chk chk-off">—</span>公式ガイドブックにロゴ掲載</li>
+              <li class="dim"><span class="chk chk-off">—</span>動画プロモーション</li>
+              <li class="dim"><span class="chk chk-off">—</span>選手 T シャツにロゴ掲載</li>
+            </ul>
+            <a href="#contact" class="plan-cta-btn" data-plan="イベントパートナー">このプランで問い合わせる</a>
+          </div>
+        </div>
+
+        <!-- STANDARD PARTNER -->
+        <div class="plan-card plan-standard" data-reveal>
+          <div class="plan-header">
+            <div class="plan-tier-row">
+              <div class="shield-wrap"><div class="shield-face">S</div></div>
+              <div>
+                <div class="plan-name">STANDARD PARTNER</div>
+                <div class="plan-name-sub">スタンダードパートナー</div>
+              </div>
+            </div>
+            <div class="plan-price-row">
+              <span class="plan-price-label">費用</span>
+              <span class="plan-price-value">要相談</span>
+            </div>
+            <p class="plan-price-note">月額制・長期契約割引あり</p>
+          </div>
+          <div class="plan-body">
+            <ul class="plan-features">
+              <li class="active"><span class="chk chk-on">✓</span>公式サイトにロゴ掲載（上位表示）</li>
+              <li class="active"><span class="chk chk-on">✓</span>SNS 告知・紹介（3回/大会）</li>
+              <li class="active"><span class="chk chk-on">✓</span>大会当日の案内・紹介</li>
+              <li class="active"><span class="chk chk-on">✓</span>公式ガイドブックにロゴ掲載</li>
+              <li class="dim"><span class="chk chk-off">—</span>動画プロモーション</li>
+              <li class="dim"><span class="chk chk-off">—</span>選手 T シャツにロゴ掲載</li>
+            </ul>
+            <a href="#contact" class="plan-cta-btn" data-plan="スタンダードパートナー">このプランで問い合わせる</a>
+          </div>
+        </div>
+
+        <!-- PREMIUM PARTNER -->
+        <div class="plan-card plan-premium" data-reveal>
+          <div class="plan-header">
+            <div class="plan-tier-row">
+              <div class="shield-wrap"><div class="shield-face">P</div></div>
+              <div>
+                <div class="plan-name">PREMIUM PARTNER</div>
+                <div class="plan-name-sub">プレミアムパートナー</div>
+              </div>
+            </div>
+            <div class="plan-price-row">
+              <span class="plan-price-label">費用</span>
+              <span class="plan-price-value">要相談</span>
+            </div>
+            <p class="plan-price-note">月額制・長期契約割引あり</p>
+          </div>
+          <div class="plan-body">
+            <ul class="plan-features">
+              <li class="active"><span class="chk chk-on">✓</span>公式サイトにロゴ掲載（最上位）</li>
+              <li class="active"><span class="chk chk-on">✓</span>SNS 告知・紹介（無制限）</li>
+              <li class="active"><span class="chk chk-on">✓</span>大会当日の案内・紹介</li>
+              <li class="active"><span class="chk chk-on">✓</span>公式ガイドブックにロゴ掲載（大）</li>
+              <li class="active"><span class="chk chk-on">✓</span>動画プロモーション</li>
+              <li class="dim"><span class="chk chk-off">—</span>選手 T シャツにロゴ掲載</li>
+            </ul>
+            <a href="#contact" class="plan-cta-btn" data-plan="プレミアムパートナー">このプランで問い合わせる</a>
+          </div>
+        </div>
+
+        <!-- OFFICIAL PARTNER -->
+        <div class="plan-card plan-official is-top" data-reveal>
+          <span class="plan-recommended">最上位プラン</span>
+          <div class="plan-header">
+            <div class="plan-tier-row">
+              <div class="shield-wrap"><div class="shield-face">★</div></div>
+              <div>
+                <div class="plan-name">OFFICIAL PARTNER</div>
+                <div class="plan-name-sub">オフィシャルパートナー</div>
+              </div>
+            </div>
+            <div class="plan-price-row">
+              <span class="plan-price-label">費用</span>
+              <span class="plan-price-value">要相談</span>
+            </div>
+            <p class="plan-price-note">月額制・年間契約・複数大会対応</p>
+          </div>
+          <div class="plan-body">
+            <ul class="plan-features">
+              <li class="active"><span class="chk chk-on">✓</span>公式サイトにロゴ掲載（特別枠）</li>
+              <li class="active"><span class="chk chk-on">✓</span>SNS 告知・紹介（無制限＋専用投稿）</li>
+              <li class="active"><span class="chk chk-on">✓</span>開会式・表彰式での特別紹介</li>
+              <li class="active"><span class="chk chk-on">✓</span>公式ガイドブックにロゴ掲載（特別扱い）</li>
+              <li class="active"><span class="chk chk-on">✓</span>動画プロモーション（専用動画制作）</li>
+              <li class="active"><span class="chk chk-on">✓</span>各選手 T シャツにロゴ掲載</li>
+            </ul>
+            <a href="#contact" class="plan-cta-btn" data-plan="オフィシャルパートナー">このプランで問い合わせる</a>
+          </div>
+        </div>
+
+      </div>
+
+      <p style="text-align:center;font-size:0.78rem;color:var(--gray);margin-top:24px;" data-reveal>
+        上記以外のカスタムプランや複数大会での協賛もご相談いただけます。
+      </p>
+    </div>
+  </section>
+
+  <!-- ════ CONTACT ════ -->
+  <section id="contact">
+    <div class="container">
+      <div data-reveal>
+        <span class="section-label">CONTACT</span>
+        <h2 class="section-title">お問い<span class="gold-text">合わせ</span></h2>
+        <p class="section-sub">ご興味のある方はフォームよりお気軽にご連絡ください。担当者より2営業日以内にご返答いたします。</p>
+      </div>
+
+      <form class="contact-form" action="#" method="post" data-reveal>
+
+        <div class="form-row-2col">
+          <div class="form-row">
+            <label>会社名・屋号 <span class="required-badge">必須</span></label>
+            <input type="text" name="company" placeholder="株式会社〇〇" required>
+          </div>
+          <div class="form-row">
+            <label>担当者名 <span class="required-badge">必須</span></label>
+            <input type="text" name="name" placeholder="山田 太郎" required>
+          </div>
+        </div>
+
+        <div class="form-row-2col">
+          <div class="form-row">
+            <label>電話番号 <span class="required-badge">必須</span></label>
+            <input type="tel" name="tel" placeholder="03-0000-0000" required>
+          </div>
+          <div class="form-row">
+            <label>メールアドレス <span class="required-badge">必須</span></label>
+            <input type="email" name="email" placeholder="info@example.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label>興味のあるプラン <span class="optional-badge">任意</span></label>
+          <select name="plan">
+            <option value="">-- 選択してください --</option>
+            <option value="event">イベントパートナー</option>
+            <option value="standard">スタンダードパートナー</option>
+            <option value="premium">プレミアムパートナー</option>
+            <option value="official">オフィシャルパートナー</option>
+            <option value="custom">カスタム・その他</option>
+            <option value="undecided">まだ決まっていない</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label>その他・ご質問 <span class="optional-badge">任意</span></label>
+          <textarea name="message" placeholder="ご質問・ご要望・ご予算のご相談など、何でもご記入ください。"></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">送信する</button>
+
+        <p class="form-note">
+          ご入力いただいた個人情報は、お問い合わせへの返答のみに使用し、<br>
+          第三者への提供・その他の目的には利用いたしません。
+        </p>
+
+      </form>
+    </div>
+  </section>
+
+  <!-- ════ FOOTER ════ -->
+  <footer>
+    <div class="footer-logo">Era <span>Rise</span> Dunk</div>
+    <nav class="footer-links">
+      <a href="index.html">参加者向けページ</a>
+      <a href="#contents">協賛内容</a>
+      <a href="#plans">パートナープラン</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <p class="footer-copy">&copy; 2026 Era Rise Dunk. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('is-visible'), i * 70);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
+
+    // header shrink
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      header.style.padding = window.scrollY > 60 ? '10px 20px' : '14px 20px';
+    }, { passive: true });
+
+    // plan CTA → select sync
+    document.querySelectorAll('.plan-cta-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const planLabel = btn.dataset.plan;
+        const select = document.querySelector('select[name="plan"]');
+        if (!select || !planLabel) return;
+        const opt = [...select.options].find(o => o.text === planLabel);
+        if (opt) select.value = opt.value;
+        select.closest('.form-row').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+  </script>
+</body>
+</html>
