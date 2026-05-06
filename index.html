@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Era Rise Dunk | 日本一の社会人バスケットボール大会</title>
+  <meta name="description" content="社会人バスケットボール大会「Era Rise Dunk」。ROOKIE〜LEGENDのランク制で本格的な大会体験を。LINE登録で今すぐ参加申込！">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --black-mid: #111111;
+      --black-light: #1a1a1a;
+      --gold: #d4a017;
+      --gold-light: #f0c040;
+      --gold-dark: #a07810;
+      --red: #c0152a;
+      --red-light: #e01e35;
+      --white: #f5f5f5;
+      --gray: #888888;
+      --gray-light: #cccccc;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      font-family: 'Noto Sans JP', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── UTILITIES ── */
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .gold-text { color: var(--gold-light); }
+    .red-text  { color: var(--red-light); }
+
+    .section-label {
+      display: inline-block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      border: 1px solid var(--gold-dark);
+      padding: 4px 14px;
+      border-radius: 2px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 5vw, 2.4rem);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .section-sub {
+      color: var(--gray-light);
+      font-size: 0.92rem;
+      margin-bottom: 40px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+      color: var(--black);
+      font-weight: 900;
+      font-size: 1.05rem;
+      padding: 18px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 20px rgba(212, 160, 23, 0.35);
+      letter-spacing: 0.05em;
+    }
+
+    .btn-primary:active {
+      transform: scale(0.97);
+    }
+
+    @media (hover: hover) {
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 30px rgba(212, 160, 23, 0.55);
+      }
+    }
+
+    .btn-line {
+      background: linear-gradient(135deg, #00b900 0%, #00d100 100%);
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(0, 185, 0, 0.35);
+    }
+
+    @media (hover: hover) {
+      .btn-line:hover {
+        box-shadow: 0 8px 30px rgba(0, 185, 0, 0.55);
+      }
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--red-light);
+    }
+
+    .header-cta {
+      font-size: 0.78rem;
+      padding: 10px 18px;
+      max-width: none;
+      width: auto;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px 60px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 40%, rgba(192, 21, 42, 0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(212, 160, 23, 0.12) 0%, transparent 60%),
+        var(--black);
+    }
+
+    .hero-court-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(212,160,23,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212,160,23,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-circle {
+      position: absolute;
+      border: 1px solid rgba(212, 160, 23, 0.08);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .hero-circle:nth-child(1) { width: 300px; height: 300px; }
+    .hero-circle:nth-child(2) { width: 500px; height: 500px; border-color: rgba(192, 21, 42, 0.06); }
+    .hero-circle:nth-child(3) { width: 750px; height: 750px; }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 0.3em;
+      font-size: 0.9rem;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .hero-eyebrow::before,
+    .hero-eyebrow::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold-dark);
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 10vw, 5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+
+    .hero-title .line1 { display: block; color: var(--white); }
+    .hero-title .line2 {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 2px var(--gold-light);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 14vw, 7rem);
+      letter-spacing: 0.04em;
+    }
+    .hero-title .line3 { display: block; color: var(--red-light); font-size: clamp(2rem, 8vw, 4.5rem); }
+
+    .hero-desc {
+      color: var(--gray-light);
+      font-size: 0.95rem;
+      margin: 20px auto 36px;
+      max-width: 480px;
+      line-height: 1.8;
+    }
+
+    .hero-cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-note {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-top: 4px;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: var(--gray);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-hint::after {
+      content: '';
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, var(--gold-dark), transparent);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ── OVERVIEW ── */
+    #overview {
+      padding: 80px 0;
+      background: var(--black-mid);
+      border-top: 1px solid rgba(212, 160, 23, 0.12);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 48px;
+    }
+
+    .info-card {
+      background: var(--black-light);
+      border: 1px solid rgba(212, 160, 23, 0.15);
+      border-radius: 8px;
+      padding: 20px 16px;
+    }
+
+    .info-card-label {
+      font-size: 0.7rem;
+      color: var(--gold);
+      letter-spacing: 0.18em;
+      font-family: 'Bebas Neue', sans-serif;
+      margin-bottom: 6px;
+    }
+
+    .info-card-value {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .ranks-title {
+      font-weight: 900;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      text-align: center;
+      color: var(--gray-light);
+    }
+
+    .ranks-track {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 6px;
+    }
+
+    .rank-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .rank-bar {
+      width: 100%;
+      border-radius: 4px 4px 0 0;
+      background: var(--black-light);
+      border: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rank-bar::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--bar-color);
+      opacity: 0.7;
+    }
+
+    .rank-icon {
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .rank-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      color: var(--gray-light);
+      text-align: center;
+    }
+
+    .rank-item.active .rank-name { color: var(--gold-light); }
+
+    .game-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .game-feature {
+      background: var(--black-light);
+      border: 1px solid rgba(192, 21, 42, 0.2);
+      border-radius: 8px;
+      padding: 18px 14px;
+      text-align: center;
+    }
+
+    .game-feature-icon {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .game-feature-text {
+      font-size: 0.82rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    /* ── TARGET ── */
+    #target {
+      padding: 80px 0;
+      background: var(--black);
+    }
+
+    .target-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .target-card {
+      background: var(--black-light);
+      border-radius: 10px;
+      padding: 24px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      border: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .target-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--gold), var(--red));
+    }
+
+    .target-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: rgba(212, 160, 23, 0.15);
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 44px;
+    }
+
+    .target-body h3 {
+      font-size: 1.05rem;
+      font-weight: 900;
+      margin-bottom: 6px;
+      color: var(--gold-light);
+    }
+
+    .target-body p {
+      font-size: 0.88rem;
+      color: var(--gray-light);
+      line-height: 1.7;
+    }
+
+    /* ── BENEFITS ── */
+    #benefits {
+      padding: 80px 0;
+      background: var(--black-mid);
+      border-top: 1px solid rgba(192, 21, 42, 0.15);
+      border-bottom: 1px solid rgba(192, 21, 42, 0.15);
+    }
+
+    .benefits-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .benefit-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .benefit-icon-wrap {
+      width: 56px;
+      height: 56px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--red) 0%, var(--red-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .benefit-text h3 {
+      font-size: 1rem;
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .benefit-text p {
+      font-size: 0.85rem;
+      color: var(--gray-light);
+      line-height: 1.7;
+    }
+
+    /* ── HOW TO JOIN ── */
+    #howtojoin {
+      padding: 80px 0;
+      background: var(--black);
+    }
+
+    .steps {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .steps::before {
+      content: '';
+      position: absolute;
+      left: 27px;
+      top: 28px;
+      bottom: 28px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold-dark), var(--red));
+      z-index: 0;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding-bottom: 36px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step:last-child { padding-bottom: 0; }
+
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      color: var(--black);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .step-body {
+      padding-top: 12px;
+    }
+
+    .step-body h3 {
+      font-size: 1.05rem;
+      font-weight: 900;
+      margin-bottom: 4px;
+      color: var(--gold-light);
+    }
+
+    .step-body p {
+      font-size: 0.85rem;
+      color: var(--gray-light);
+      line-height: 1.7;
+    }
+
+    .step-tag {
+      display: inline-block;
+      background: rgba(212, 160, 23, 0.1);
+      border: 1px solid rgba(212, 160, 23, 0.3);
+      color: var(--gold-light);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }
+
+    /* ── FINAL CTA ── */
+    #cta {
+      padding: 80px 20px;
+      background: linear-gradient(180deg, var(--black-mid) 0%, var(--black) 100%);
+      text-align: center;
+      border-top: 1px solid rgba(212, 160, 23, 0.15);
+    }
+
+    .cta-deco {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 18vw, 9rem);
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(212, 160, 23, 0.08);
+      line-height: 0.9;
+      margin-bottom: -20px;
+      letter-spacing: 0.06em;
+      user-select: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-title {
+      font-size: clamp(1.6rem, 6vw, 2.5rem);
+      font-weight: 900;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .cta-desc {
+      color: var(--gray-light);
+      font-size: 0.9rem;
+      margin-bottom: 36px;
+      line-height: 1.8;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .cta-guarantee {
+      margin-top: 24px;
+      font-size: 0.78rem;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cta-guarantee span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 32px 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.4rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span { color: var(--red-light); }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0 0 48px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(212, 160, 23, 0.2);
+    }
+
+    /* ── LINE ICON ── */
+    .line-icon {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ── ANIMATIONS ── */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── MEDIA QUERIES ── */
+    @media (min-width: 540px) {
+      .overview-grid { grid-template-columns: repeat(4, 1fr); }
+      .game-features { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    @media (min-width: 640px) {
+      .target-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .target-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .target-card::before { display: none; }
+
+      .target-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(to right, var(--gold), var(--red));
+      }
+
+      .target-num { min-width: unset; }
+    }
+
+    @media (min-width: 768px) {
+      .hero-cta-wrap { flex-direction: row; justify-content: center; }
+      .btn-primary { width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#hero" class="logo">Era <span>Rise</span> Dunk</a>
+    <a href="#cta" class="btn-primary btn-line header-cta">
+      <svg class="line-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+      </svg>
+      参加登録はこちら
+    </a>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-court-lines"></div>
+    <div class="hero-circle"></div>
+    <div class="hero-circle"></div>
+    <div class="hero-circle"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">SOCIAL BASKETBALL TOURNAMENT</p>
+      <h1 class="hero-title">
+        <span class="line1">日本一の社会人</span>
+        <span class="line2">BASKETBALL</span>
+        <span class="line3">大会に参加しよう</span>
+      </h1>
+      <p class="hero-desc">
+        ROOKIE から LEGEND まで<br>
+        本格ランク制で戦う社会人バスケ大会。<br>
+        あなたのレベルに合ったステージが待っている。
+      </p>
+      <div class="hero-cta-wrap">
+        <a href="#cta" class="btn-primary btn-line">
+          <svg class="line-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+          </svg>
+          LINEで参加登録する（無料）
+        </a>
+        <a href="#overview" class="btn-primary" style="background: transparent; color: var(--gold-light); border: 1px solid rgba(212,160,23,0.4); box-shadow: none; max-width: 400px;">
+          大会の詳細を見る
+        </a>
+      </div>
+      <p class="hero-note">登録・参加申込は完全無料</p>
+    </div>
+
+    <div class="scroll-hint">SCROLL</div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section id="overview">
+    <div class="container">
+      <div data-reveal>
+        <span class="section-label">TOURNAMENT OVERVIEW</span>
+        <h2 class="section-title">大会概要</h2>
+        <p class="section-sub">本格的なルールと環境で、真剣勝負を楽しもう。</p>
+      </div>
+
+      <div class="overview-grid" data-reveal>
+        <div class="info-card">
+          <div class="info-card-label">STYLE</div>
+          <div class="info-card-value">5 on 5</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">RANKS</div>
+          <div class="info-card-value">7段階</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">FORMAT</div>
+          <div class="info-card-value">トーナメント</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">TARGET</div>
+          <div class="info-card-value">社会人限定</div>
+        </div>
+      </div>
+
+      <div data-reveal>
+        <p class="ranks-title">ランクシステム — あなたのレベルで戦う</p>
+        <div class="ranks-track">
+          <div class="rank-item">
+            <div class="rank-bar" style="height: 30px; --bar-color: #8b5cf6;"></div>
+            <span class="rank-icon">🟣</span>
+            <span class="rank-name">ROOKIE</span>
+          </div>
+          <div class="rank-item">
+            <div class="rank-bar" style="height: 46px; --bar-color: #cd7f32;"></div>
+            <span class="rank-icon">🟤</span>
+            <span class="rank-name">BRONZE</span>
+          </div>
+          <div class="rank-item">
+            <div class="rank-bar" style="height: 62px; --bar-color: #adb5bd;"></div>
+            <span class="rank-icon">⚪</span>
+            <span class="rank-name">SILVER</span>
+          </div>
+          <div class="rank-item active">
+            <div class="rank-bar" style="height: 80px; --bar-color: #d4a017;"></div>
+            <span class="rank-icon">🟡</span>
+            <span class="rank-name">GOLD</span>
+          </div>
+          <div class="rank-item">
+            <div class="rank-bar" style="height: 100px; --bar-color: #00d4ff;"></div>
+            <span class="rank-icon">🔵</span>
+            <span class="rank-name">PLATINUM</span>
+          </div>
+          <div class="rank-item">
+            <div class="rank-bar" style="height: 120px; --bar-color: #b9f2ff;"></div>
+            <span class="rank-icon">💎</span>
+            <span class="rank-name">DIAMOND</span>
+          </div>
+          <div class="rank-item">
+            <div class="rank-bar" style="height: 144px; --bar-color: #ff4d4f;"></div>
+            <span class="rank-icon">🔴</span>
+            <span class="rank-name">LEGEND</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-features" data-reveal>
+        <div class="game-feature">
+          <div class="game-feature-icon">🏆</div>
+          <div class="game-feature-text">勝利でランクアップ</div>
+        </div>
+        <div class="game-feature">
+          <div class="game-feature-icon">📊</div>
+          <div class="game-feature-text">個人成績トラッキング</div>
+        </div>
+        <div class="game-feature">
+          <div class="game-feature-icon">🏟️</div>
+          <div class="game-feature-text">本格体育館使用</div>
+        </div>
+        <div class="game-feature">
+          <div class="game-feature-icon">👕</div>
+          <div class="game-feature-text">ユニフォーム着用</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARGET -->
+  <section id="target">
+    <div class="container">
+      <div data-reveal>
+        <span class="section-label">WHO IS THIS FOR</span>
+        <h2 class="section-title">こんな人に<br><span class="gold-text">おすすめ</span></h2>
+        <p class="section-sub">経験レベル問わず、バスケを愛する社会人ならだれでも。</p>
+      </div>
+
+      <div class="target-cards">
+        <div class="target-card" data-reveal>
+          <div class="target-num">01</div>
+          <div class="target-body">
+            <h3>バスケ経験者で<br>もう一度本気で競いたい</h3>
+            <p>学生時代の熱量を取り戻したい方。本格的なルールと審判のもとでプレーできます。</p>
+          </div>
+        </div>
+        <div class="target-card" data-reveal>
+          <div class="target-num">02</div>
+          <div class="target-body">
+            <h3>社会人になって<br>バスケを始めたい</h3>
+            <p>ROOKIE クラスはバスケ初心者〜経験者まで対応。ゆるく楽しみたい方にも最適。</p>
+          </div>
+        </div>
+        <div class="target-card" data-reveal>
+          <div class="target-num">03</div>
+          <div class="target-body">
+            <h3>チームメンバーを<br>新たに探している</h3>
+            <p>大会を通じて同レベルのバスケ仲間と出会えます。チーム結成のきっかけに。</p>
+          </div>
+        </div>
+        <div class="target-card" data-reveal>
+          <div class="target-num">04</div>
+          <div class="target-body">
+            <h3>ゲームのように<br>成長を実感したい</h3>
+            <p>ランクシステムで自分の成長が数値で見える。次の目標がクリアになります。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="benefits">
+    <div class="container">
+      <div data-reveal>
+        <span class="section-label">BENEFITS</span>
+        <h2 class="section-title">参加する<span class="red-text">メリット</span></h2>
+        <p class="section-sub">Era Rise Dunk だけの価値を体験しよう。</p>
+      </div>
+
+      <div class="benefits-list">
+        <div class="benefit-item" data-reveal>
+          <div class="benefit-icon-wrap">🏅</div>
+          <div class="benefit-text">
+            <h3>本格的な大会体験</h3>
+            <p>公式審判・本格体育館・スコアボードを完備。草バスケとは一線を画す真剣勝負の環境を提供します。</p>
+          </div>
+        </div>
+        <div class="benefit-item" data-reveal>
+          <div class="benefit-icon-wrap">🤝</div>
+          <div class="benefit-text">
+            <h3>仲間との出会い</h3>
+            <p>同じランク帯・同じ熱量のプレイヤーと自然に繋がれます。大会後の交流で一生の仲間が見つかることも。</p>
+          </div>
+        </div>
+        <div class="benefit-item" data-reveal>
+          <div class="benefit-icon-wrap">📈</div>
+          <div class="benefit-text">
+            <h3>ランクアップの達成感</h3>
+            <p>勝利・個人成績でランクが上昇。LEGEND を目指す長期的なモチベーションがプレーを熱くします。</p>
+          </div>
+        </div>
+        <div class="benefit-item" data-reveal>
+          <div class="benefit-icon-wrap">📱</div>
+          <div class="benefit-text">
+            <h3>LINE で全て完結</h3>
+            <p>参加申込・スケジュール通知・チーム連絡まで、すべて使い慣れた LINE 上で管理できます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO JOIN -->
+  <section id="howtojoin">
+    <div class="container">
+      <div data-reveal>
+        <span class="section-label">HOW TO JOIN</span>
+        <h2 class="section-title">参加の<span class="gold-text">流れ</span></h2>
+        <p class="section-sub">たった3ステップ。最短5分で申込完了。</p>
+      </div>
+
+      <div class="steps">
+        <div class="step" data-reveal>
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <span class="step-tag">LINE 登録</span>
+            <h3>公式 LINE に友だち追加</h3>
+            <p>下のボタンから Era Rise Dunk の公式 LINE アカウントを友だち追加します。登録は無料・30秒で完了。</p>
+          </div>
+        </div>
+        <div class="step" data-reveal>
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <span class="step-tag">参加申込</span>
+            <h3>参加フォームに回答</h3>
+            <p>LINE 上で送られてくるフォームに経験年数・希望ランクなどを入力。チームがある方もない方も申込可能。</p>
+          </div>
+        </div>
+        <div class="step" data-reveal>
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <span class="step-tag">大会当日</span>
+            <h3>会場でプレーするだけ！</h3>
+            <p>スケジュール・会場詳細は LINE で通知。当日は体育館に来て全力プレーするだけです。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="cta">
+    <div class="container">
+      <p class="cta-deco" aria-hidden="true">RISE</p>
+      <div class="cta-content" data-reveal>
+        <span class="section-label">JOIN NOW</span>
+        <h2 class="cta-title">
+          今すぐコートに<br>
+          <span class="gold-text">戻ろう。</span>
+        </h2>
+        <p class="cta-desc">
+          登録は無料・1分で完了。<br>
+          あなたのランクで、あなたのステージで、<br>
+          日本一の社会人バスケ大会に挑戦しよう。
+        </p>
+        <div class="cta-buttons">
+          <a href="https://line.me/R/ti/p/@era-rise-dunk" class="btn-primary btn-line" style="font-size: 1.15rem; padding: 22px 40px;">
+            <svg class="line-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+            </svg>
+            LINEで参加登録する（無料）
+          </a>
+        </div>
+        <div class="cta-guarantee">
+          <span>✓ 登録無料</span>
+          <span>✓ 1分で完了</span>
+          <span>✓ いつでも退会可能</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Era <span>Rise</span> Dunk</div>
+    <p class="footer-copy">&copy; 2026 Era Rise Dunk. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Intersection Observer for reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('is-visible');
+          }, i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+
+    // Smooth header shrink on scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      header.style.padding = window.scrollY > 60 ? '10px 20px' : '14px 20px';
+    }, { passive: true });
+  </script>
+</body>
+</html>
