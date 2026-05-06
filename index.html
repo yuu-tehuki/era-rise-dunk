@@ -269,6 +269,26 @@
       margin-top: 4px;
     }
 
+    .hero-text-link {
+      color: var(--gold-light);
+      font-size: 0.85rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border-bottom: 1px solid rgba(212, 160, 23, 0.35);
+      padding-bottom: 2px;
+      transition: border-color 0.2s, color 0.2s;
+      letter-spacing: 0.04em;
+    }
+
+    @media (hover: hover) {
+      .hero-text-link:hover {
+        color: var(--white);
+        border-color: var(--gold-light);
+      }
+    }
+
     .scroll-hint {
       position: absolute;
       bottom: 28px;
@@ -372,8 +392,8 @@
 
     /* ── RANK BADGE (shield) ── */
     .rank-badge {
-      width: 34px;
-      height: 40px;
+      width: 51px;
+      height: 60px;
       clip-path: polygon(50% 0%, 100% 16%, 100% 72%, 50% 100%, 0% 72%, 0% 16%);
       display: flex;
       align-items: center;
@@ -383,14 +403,14 @@
     }
 
     .rank-badge-face {
-      width: 26px;
-      height: 31px;
+      width: 39px;
+      height: 46px;
       clip-path: polygon(50% 0%, 100% 16%, 100% 72%, 50% 100%, 0% 72%, 0% 16%);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 0.82rem;
+      font-size: 1.2rem;
       color: rgba(255, 255, 255, 0.95);
       text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
       letter-spacing: 0;
@@ -479,18 +499,18 @@
     }
 
     .target-cards {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
 
     .target-card {
       background: var(--black-light);
       border-radius: 10px;
-      padding: 24px 20px;
+      padding: 16px 14px;
       display: flex;
-      align-items: flex-start;
-      gap: 18px;
+      flex-direction: column;
+      gap: 8px;
       border: 1px solid rgba(255,255,255,0.06);
       position: relative;
       overflow: hidden;
@@ -499,33 +519,33 @@
     .target-card::before {
       content: '';
       position: absolute;
-      left: 0;
       top: 0;
-      bottom: 0;
-      width: 3px;
-      background: linear-gradient(to bottom, var(--gold), var(--red));
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--gold), var(--red));
     }
 
     .target-num {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.5rem;
-      color: rgba(212, 160, 23, 0.15);
+      font-size: 1.1rem;
+      color: var(--gold);
       line-height: 1;
       flex-shrink: 0;
-      min-width: 44px;
     }
 
     .target-body h3 {
-      font-size: 1.05rem;
+      font-size: 0.88rem;
       font-weight: 900;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       color: var(--gold-light);
+      line-height: 1.4;
     }
 
     .target-body p {
-      font-size: 0.88rem;
+      font-size: 0.78rem;
       color: var(--gray-light);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     /* ── BENEFITS ── */
@@ -783,13 +803,8 @@
     }
 
     @media (min-width: 640px) {
-      .target-cards {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
-
       .target-card {
-        flex-direction: column;
+        padding: 20px 16px;
         align-items: center;
         text-align: center;
       }
@@ -802,15 +817,16 @@
         bottom: 0;
         left: 0;
         right: 0;
-        height: 3px;
+        height: 2px;
         background: linear-gradient(to right, var(--gold), var(--red));
       }
 
-      .target-num { min-width: unset; }
+      .target-body h3 { font-size: 0.92rem; }
+      .target-body p  { font-size: 0.82rem; }
     }
 
     @media (min-width: 768px) {
-      .hero-cta-wrap { flex-direction: row; justify-content: center; }
+      .hero-cta-wrap { flex-direction: row; justify-content: center; align-items: center; }
       .btn-primary { width: auto; }
     }
   </style>
@@ -855,9 +871,7 @@
           </svg>
           LINEで参加登録する（無料）
         </a>
-        <a href="#overview" class="btn-primary" style="background: transparent; color: var(--gold-light); border: 1px solid rgba(212,160,23,0.4); box-shadow: none; max-width: 400px;">
-          大会の詳細を見る
-        </a>
+        <a href="#overview" class="hero-text-link">大会の詳細を見る ↓</a>
       </div>
       <p class="hero-note">登録・参加申込は完全無料</p>
     </div>
@@ -1084,8 +1098,7 @@
       <div class="cta-content" data-reveal>
         <span class="section-label">JOIN NOW</span>
         <h2 class="cta-title">
-          今すぐコートに<br>
-          <span class="gold-text">戻ろう。</span>
+          今すぐ<span class="gold-text">参加登録する</span>
         </h2>
         <p class="cta-desc">
           登録は無料・1分で完了。<br>
